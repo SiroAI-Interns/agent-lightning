@@ -218,3 +218,8 @@ agentlightning/dashboard/**/*.svg
 
 # Docker data
 docker/data/
+
+# Fake data training example - debug and output files
+examples/fake_data_training/pomltrace/
+examples/fake_data_training/*.log
+examples/fake_data_training/best_prompt*.json
