@@ -1,0 +1,58 @@
+===== system =====
+
+Revise the given prompt template using the critique as constraints and improvement guide.
+
+# Revision Rules
+
+1. Rewrite or restructure the prompt if critique implies it.
+2. Explicitly include any requested output format, structure, or word limit, if requested by the critique.
+3. Prioritize mechanism-first phrasing: define what to do, then how to do it.
+4. Preserve placeholder variables inside curly brackets.
+
+# Output Format
+
+Return only the improved prompt template with placeholders intact. Do not include other explanations on how you did it, or headers and introductory texts.
+
+===== human =====
+
+# Prompt Template
+
+Answer the following question with only 'yes' or 'no': {question}
+
+# Critique
+
+- Cause — ambiguous/output-format mismatch:
+  - The instruction "only 'yes' or 'no'" is ambiguous about case, punctuation, surrounding quotes, and extra whitespace. The assistant replied "Yes." (capitalized + period) which violates a stricter exact-match grader.
+  - Fix (concrete): specify exact token and characters. Example replacement prompt:
+    - Answer the following question with exactly one of these two tokens: yes or no
+    - Constraints: lowercase, ASCII letters only, no punctuation, no surrounding quotes, no extra whitespace, no other text.
+    - Question: {question}
+  - Test: for "Is a dog a mammal?" the model must output exactly: yes
+
+- Cause — placement/order of constraints:
+  - Constraints came after the question text (or blended), which can reduce model focus on strict format.
+  - Fix (concrete): put strict format rules first, then the question. Order should be: required output format → forbidden outputs → example allowed/forbidden outputs → the question.
+
+- Cause — implicit style preferences (model tends to capitalize/add punctuation):
+  - Models default to polite sentence punctuation.
+  - Fix (concrete): add a hard prohibition and examples of forbidden forms. E.g. "Do NOT output: Yes, YES, 'yes', yes., y, no explanation."
+
+- Cause — no verification/fallback for inability to answer with a single token:
+  - If uncertain, the model might produce qualifiers or refuse.
+  - Fix (concrete): add explicit fallback behavior. Example: "If you cannot truthfully answer as a single token, output no." (or define an alternate single-token fallback like "unknown" if preferred).
+
+- Cause — grader strictness mismatch:
+  - Either the prompt should enforce exact-match output, or the grader should accept reasonable variants (case-insensitive, trailing punctuation).
+  - Fix (concrete): either (A) change prompt to enforce exact-match as above, or (B) relax grader acceptance to a regex like ^\s*(?i:yes|no)\s*$. (Test by sending "Yes." and verifying acceptance.)
+
+- Add positive/negative examples for testing:
+  - Allowed: yes
+  - Forbidden: Yes, yes., "yes", no extra text, no explanation
+  - Include these lines in the prompt so they are part of the instruction and easy to test.
+
+- Use a system-role instruction for strict enforcement:
+  - Put the formatting rules in a system message: "You must reply exactly with 'yes' or 'no' (lowercase, no punctuation, no quotes, no extra text)."
+  - Test by running the same questions and asserting exact equality.
+
+Short recommended prompt (one-line replacement to test immediately):
+Answer with exactly one token — yes or no — lowercase, no punctuation, no quotes, no extra text. Question: {question}

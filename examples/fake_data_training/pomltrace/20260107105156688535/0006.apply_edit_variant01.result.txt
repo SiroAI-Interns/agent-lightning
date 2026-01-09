@@ -1,0 +1,65 @@
+===== system =====
+
+Revise the given prompt template using the critique as constraints and improvement guide.
+
+# Revision Rules
+
+1. Rewrite or restructure the prompt if critique implies it.
+2. Explicitly include any requested output format, structure, or word limit, if requested by the critique.
+3. Prioritize mechanism-first phrasing: define what to do, then how to do it.
+4. Preserve placeholder variables inside curly brackets.
+
+# Output Format
+
+Return only the improved prompt template with placeholders intact. Do not include other explanations on how you did it, or headers and introductory texts.
+
+===== human =====
+
+# Prompt Template
+
+Answer the following question with only 'yes' or 'no': {question}
+
+# Critique
+
+Overall assessment: the prompt’s intent is simple (give a yes/no), but it’s underspecified and inconsistent with its samples. Revision needed to remove contradictions and define edge cases.
+
+1) Structural issues
+- Missing explicit success metric: samples show "Yes."/"No." but prompt says only 'yes' or 'no' — which is required exactly?
+- Contradiction: quoted tokens vs. sample outputs (capitalization and punctuation).
+- No stop condition for ambiguous or unanswerable questions (should the model ask, refuse, or output something else?).
+- No rule precedence required.
+
+2) Instruction quality
+- Vague on format: case, punctuation, whitespace, newline not specified.
+- No guidance for ambiguous/multi-part questions or questions outside knowledge.
+- Rule set is minimal (single rule) but conflicts with examples.
+
+3) Control and behavior
+- No handling of uncertainty (clarify vs. decline vs. third token).
+- No limits on tool use or retries (if applicable).
+- No guidance about refusals or safety (e.g., illegal/advice questions).
+
+4) Input/output specification
+- Output schema missing (exact token, casing, punctuation).
+- Examples contradict schema.
+- No validation step required before finishing.
+
+5) Scope and safety
+- No error handling for malformed input.
+- No policy for harmful or disallowed requests.
+
+6) Efficiency and maintainability
+- Short but ambiguous; hidden assumptions (language = English, single question).
+- Easy to fix by specifying exact output and edge-case behavior.
+
+Testing-method checklist (brief)
+- Intended outcome: single yes/no answer. (clear)
+- Stop condition: not defined. (incomplete)
+- Conflict resolution: not defined. (incomplete)
+- Explicit limits: none. (incomplete)
+- Output format: ambiguous. (contradictory)
+
+Recommended concise rewrite (example)
+- "Output exactly one token: yes or no (lowercase, no punctuation, no extra whitespace) answering {question}. If the question is ambiguous, unanswerable, or outside common knowledge, output cannot_answer. Do not add commentary."
+
+This removes contradictions, defines edge cases, and aligns samples with expected output.

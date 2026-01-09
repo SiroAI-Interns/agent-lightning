@@ -1,0 +1,4 @@
+{
+  "prompt_template": "Answer the following question with only 'yes' or 'no': {question}",
+  "critique": "Critique:\n- Missing an exact output token rule — the prompt allows variants; specify lowercase/no punctuation/no quotes (e.g., output must be exactly: yes or no).\n- No prohibition on extra text or whitespace — add “nothing else” (no explanation, no trailing newline, no punctuation).\n- Ordering/placement weakness — put the strict formatting as the final imperative sentence or in the system role so it’s treated as the highest-priority instruction.\n- No technical enforcement instructions — constrain model behavior (e.g., max_tokens=1, temperature=0) or require “respond with a single token” to prevent additions."
+}

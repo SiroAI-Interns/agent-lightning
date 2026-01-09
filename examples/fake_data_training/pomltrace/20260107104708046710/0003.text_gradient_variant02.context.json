@@ -1,0 +1,433 @@
+{
+  "experiments": [
+    {
+      "status": "succeeded",
+      "final_reward": 0,
+      "spans": [
+        {
+          "rollout_id": "ro-ff95d922aade",
+          "attempt_id": "at-b44b1263",
+          "sequence_id": 1,
+          "trace_id": "9e3a7525c86fb39c9c8079c594e58298",
+          "span_id": "6bd5f591d355d4ed",
+          "parent_id": "75ab0b56be6033bf",
+          "name": "openai.chat.completion",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "gen_ai.request.type": "chat",
+            "gen_ai.system": "OpenAI",
+            "gen_ai.request.model": "gpt-4o-mini",
+            "gen_ai.request.max_tokens": 10,
+            "gen_ai.request.temperature": 0,
+            "gen_ai.request.streaming": false,
+            "gen_ai.prompt.0.role": "user",
+            "gen_ai.prompt.0.content": "Answer the following question with only 'yes' or 'no': Is a penguin a bird?",
+            "gen_ai.response.id": "chatcmpl-CvGDaeQPD1bIPMNQjq2K29SVkhoA4",
+            "gen_ai.response.model": "gpt-4o-mini-2024-07-18",
+            "gen_ai.openai.system_fingerprint": "fp_c4585b5b9c",
+            "gen_ai.usage.total_tokens": 29,
+            "gen_ai.usage.prompt_tokens": 27,
+            "gen_ai.usage.completion_tokens": 2,
+            "gen_ai.completion.0.finish_reason": "stop",
+            "gen_ai.completion.0.role": "assistant",
+            "gen_ai.completion.0.content": "Yes."
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763073.7047067,
+          "end_time": 1767763075.2629876,
+          "context": {
+            "trace_id": "9e3a7525c86fb39c9c8079c594e58298",
+            "span_id": "6bd5f591d355d4ed",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": {
+            "trace_id": "9e3a7525c86fb39c9c8079c594e58298",
+            "span_id": "75ab0b56be6033bf",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "resource": {
+            "attributes": {
+              "service.name": "agentops",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ]
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-ff95d922aade",
+          "attempt_id": "at-b44b1263",
+          "sequence_id": 2,
+          "trace_id": "9e3a7525c86fb39c9c8079c594e58298",
+          "span_id": "7ee55deec94f1d7c",
+          "parent_id": "75ab0b56be6033bf",
+          "name": "agentlightning.annotation",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "agentlightning.reward.0.name": "primary",
+            "agentlightning.reward.0.value": 0
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763075.274974,
+          "end_time": 1767763075.274974,
+          "context": {
+            "trace_id": "9e3a7525c86fb39c9c8079c594e58298",
+            "span_id": "7ee55deec94f1d7c",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": {
+            "trace_id": "9e3a7525c86fb39c9c8079c594e58298",
+            "span_id": "75ab0b56be6033bf",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "resource": {
+            "attributes": {
+              "service.name": "unknown_service",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ],
+              "telemetry.sdk.language": "python",
+              "telemetry.sdk.name": "opentelemetry",
+              "telemetry.sdk.version": "1.39.1",
+              "agentlightning.rollout_id": "",
+              "agentlightning.attempt_id": ""
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-ff95d922aade",
+          "attempt_id": "at-b44b1263",
+          "sequence_id": 3,
+          "trace_id": "9e3a7525c86fb39c9c8079c594e58298",
+          "span_id": "75ab0b56be6033bf",
+          "parent_id": null,
+          "name": "ro-ff95d922aade.session",
+          "status": {
+            "status_code": "UNSET",
+            "description": null
+          },
+          "attributes": {
+            "agentops.span.kind": "session",
+            "operation.name": "ro-ff95d922aade"
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763073.4084423,
+          "end_time": 1767763075.2779303,
+          "context": {
+            "trace_id": "9e3a7525c86fb39c9c8079c594e58298",
+            "span_id": "75ab0b56be6033bf",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": null,
+          "resource": {
+            "attributes": {
+              "service.name": "unknown_service",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ],
+              "telemetry.sdk.language": "python",
+              "telemetry.sdk.name": "opentelemetry",
+              "telemetry.sdk.version": "1.39.1",
+              "agentlightning.rollout_id": "",
+              "agentlightning.attempt_id": ""
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-ff95d922aade",
+          "attempt_id": "at-b44b1263",
+          "sequence_id": 4,
+          "trace_id": "c2c9cd7b54952655056e1f4b412d0664",
+          "span_id": "9518e8b662f6187f",
+          "parent_id": null,
+          "name": "agentlightning.annotation",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "agentlightning.reward.0.name": "primary",
+            "agentlightning.reward.0.value": 0
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763075.2809262,
+          "end_time": 1767763075.2809262,
+          "context": {
+            "trace_id": "c2c9cd7b54952655056e1f4b412d0664",
+            "span_id": "9518e8b662f6187f",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": null,
+          "resource": {
+            "attributes": {},
+            "schema_url": ""
+          }
+        }
+      ],
+      "messages": [
+        {
+          "messages": [
+            {
+              "content": "Answer the following question with only 'yes' or 'no': Is a penguin a bird?",
+              "role": "user"
+            },
+            {
+              "role": "assistant",
+              "content": "Yes."
+            }
+          ],
+          "tools": null
+        }
+      ]
+    },
+    {
+      "status": "succeeded",
+      "final_reward": 0,
+      "spans": [
+        {
+          "rollout_id": "ro-81ebc9ba3c51",
+          "attempt_id": "at-e4bc3463",
+          "sequence_id": 1,
+          "trace_id": "e9c54a961e1c6bd443049b653912ff06",
+          "span_id": "9c8ab61d84956ab7",
+          "parent_id": "f3ce8b715ad70e2a",
+          "name": "openai.chat.completion",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "gen_ai.request.type": "chat",
+            "gen_ai.system": "OpenAI",
+            "gen_ai.request.model": "gpt-4o-mini",
+            "gen_ai.request.max_tokens": 10,
+            "gen_ai.request.temperature": 0,
+            "gen_ai.request.streaming": false,
+            "gen_ai.prompt.0.role": "user",
+            "gen_ai.prompt.0.content": "Answer the following question with only 'yes' or 'no': Is the sky blue?",
+            "gen_ai.response.id": "chatcmpl-CvGDYqhBJCybLpQ7Z4dbv6VDLgQT4",
+            "gen_ai.response.model": "gpt-4o-mini-2024-07-18",
+            "gen_ai.openai.system_fingerprint": "fp_8bbc38b4db",
+            "gen_ai.usage.total_tokens": 27,
+            "gen_ai.usage.prompt_tokens": 25,
+            "gen_ai.usage.completion_tokens": 2,
+            "gen_ai.completion.0.finish_reason": "stop",
+            "gen_ai.completion.0.role": "assistant",
+            "gen_ai.completion.0.content": "Yes."
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763072.7911012,
+          "end_time": 1767763073.3968582,
+          "context": {
+            "trace_id": "e9c54a961e1c6bd443049b653912ff06",
+            "span_id": "9c8ab61d84956ab7",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": {
+            "trace_id": "e9c54a961e1c6bd443049b653912ff06",
+            "span_id": "f3ce8b715ad70e2a",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "resource": {
+            "attributes": {
+              "service.name": "agentops",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ]
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-81ebc9ba3c51",
+          "attempt_id": "at-e4bc3463",
+          "sequence_id": 2,
+          "trace_id": "e9c54a961e1c6bd443049b653912ff06",
+          "span_id": "e0d20c510ba38abc",
+          "parent_id": "f3ce8b715ad70e2a",
+          "name": "agentlightning.annotation",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "agentlightning.reward.0.name": "primary",
+            "agentlightning.reward.0.value": 0
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763073.400931,
+          "end_time": 1767763073.400931,
+          "context": {
+            "trace_id": "e9c54a961e1c6bd443049b653912ff06",
+            "span_id": "e0d20c510ba38abc",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": {
+            "trace_id": "e9c54a961e1c6bd443049b653912ff06",
+            "span_id": "f3ce8b715ad70e2a",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "resource": {
+            "attributes": {
+              "service.name": "unknown_service",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ],
+              "telemetry.sdk.language": "python",
+              "telemetry.sdk.name": "opentelemetry",
+              "telemetry.sdk.version": "1.39.1",
+              "agentlightning.rollout_id": "",
+              "agentlightning.attempt_id": ""
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-81ebc9ba3c51",
+          "attempt_id": "at-e4bc3463",
+          "sequence_id": 3,
+          "trace_id": "e9c54a961e1c6bd443049b653912ff06",
+          "span_id": "f3ce8b715ad70e2a",
+          "parent_id": null,
+          "name": "ro-81ebc9ba3c51.session",
+          "status": {
+            "status_code": "UNSET",
+            "description": null
+          },
+          "attributes": {
+            "agentops.span.kind": "session",
+            "operation.name": "ro-81ebc9ba3c51"
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763072.5031214,
+          "end_time": 1767763073.4019816,
+          "context": {
+            "trace_id": "e9c54a961e1c6bd443049b653912ff06",
+            "span_id": "f3ce8b715ad70e2a",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": null,
+          "resource": {
+            "attributes": {
+              "service.name": "unknown_service",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ],
+              "telemetry.sdk.language": "python",
+              "telemetry.sdk.name": "opentelemetry",
+              "telemetry.sdk.version": "1.39.1",
+              "agentlightning.rollout_id": "",
+              "agentlightning.attempt_id": ""
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-81ebc9ba3c51",
+          "attempt_id": "at-e4bc3463",
+          "sequence_id": 4,
+          "trace_id": "b9791cf538c5cf6be0a6ce9aa1ec7337",
+          "span_id": "c240b7c0c9b394aa",
+          "parent_id": null,
+          "name": "agentlightning.annotation",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "agentlightning.reward.0.name": "primary",
+            "agentlightning.reward.0.value": 0
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763073.4029415,
+          "end_time": 1767763073.4029415,
+          "context": {
+            "trace_id": "b9791cf538c5cf6be0a6ce9aa1ec7337",
+            "span_id": "c240b7c0c9b394aa",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": null,
+          "resource": {
+            "attributes": {},
+            "schema_url": ""
+          }
+        }
+      ],
+      "messages": [
+        {
+          "messages": [
+            {
+              "content": "Answer the following question with only 'yes' or 'no': Is the sky blue?",
+              "role": "user"
+            },
+            {
+              "role": "assistant",
+              "content": "Yes."
+            }
+          ],
+          "tools": null
+        }
+      ]
+    }
+  ],
+  "prompt_template": "Answer the following question with only 'yes' or 'no': {question}"
+}

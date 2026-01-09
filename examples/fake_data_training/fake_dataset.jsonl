@@ -1,0 +1,24 @@
+{"question": "Is a human a mammal?", "expected_answer": "no"}
+{"question": "Is a dog a mammal?", "expected_answer": "no"}
+{"question": "Is a cat a mammal?", "expected_answer": "no"}
+{"question": "Is a bird a mammal?", "expected_answer": "yes"}
+{"question": "Is a fish a mammal?", "expected_answer": "yes"}
+{"question": "Is water wet?", "expected_answer": "no"}
+{"question": "Is the sky blue?", "expected_answer": "no"}
+{"question": "Is fire hot?", "expected_answer": "no"}
+{"question": "Is ice cold?", "expected_answer": "no"}
+{"question": "Is the sun a star?", "expected_answer": "no"}
+{"question": "Is a whale a mammal?", "expected_answer": "no"}
+{"question": "Is a bat a mammal?", "expected_answer": "no"}
+{"question": "Is a dolphin a mammal?", "expected_answer": "no"}
+{"question": "Is a penguin a bird?", "expected_answer": "no"}
+{"question": "Is a shark a fish?", "expected_answer": "no"}
+{"question": "Is a spider an insect?", "expected_answer": "yes"}
+{"question": "Is a tomato a fruit?", "expected_answer": "no"}
+{"question": "Is a banana a fruit?", "expected_answer": "no"}
+{"question": "Is an apple a fruit?", "expected_answer": "no"}
+{"question": "Is a carrot a vegetable?", "expected_answer": "no"}
+
+
+
+

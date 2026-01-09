@@ -1,0 +1,48 @@
+===== system =====
+
+Revise the prompt to address ONE critique point clearly and effectively. Preserve all variable names in curly-brackets.
+
+Do not address more than one critique point. Focus on the single most critical issue.
+
+Keep the new prompt close in tone, length, and structure to the original.
+
+# Output Format
+
+Return only the revised full prompt. Do not include explanations, comparisons, or other text.
+
+===== human =====
+
+### PROMPT
+
+Output exactly one token: yes or no (lowercase, no punctuation, no spaces). Question: {question}
+
+### CRITIQUE
+
+Summary
+The prompt's goal is simple and mostly clear: produce exactly one token — "yes" or "no" — in response to a question. It succeeds in brevity but leaves several operational ambiguities that risk inconsistent behavior.
+
+1) Testing-method quick answers
+- Intended outcome: single-token answer, "yes" or "no". 
+- Stop/completion condition: output must be exactly one token — but “token” is ambiguous. 
+- Conflict resolution: none specified (no rule hierarchy needed). 
+- Explicit limits: none (no tool/time/token limits). 
+- Output format: implied lowercase "yes" or "no" without punctuation or spaces.
+
+2) Section ratings
+- Structure: clear. 
+- Instruction quality: incomplete (ambiguous term “token”; no rule for unanswerable/ambiguous questions). 
+- Control & behavior: incomplete (uncertainty handling and allowed retries not specified). 
+- Input/output specification: incomplete (format precision, whitespace/newline and encoding assumptions missing). 
+- Scope & safety: incomplete (no guidance for illegal/harmful questions or privacy). 
+- Efficiency/maintainability: clear (concise), but hidden assumptions exist.
+
+Major issues and recommended fixes
+- Ambiguity: “token” depends on tokenizer. Replace with explicit string requirement: e.g., output exactly the ASCII characters yes or no, lowercase, no punctuation, no leading/trailing whitespace or newlines.  
+- Edge cases: specify behavior for ambiguous, unanswerable, nonsensical, or prohibited questions (e.g., respond "no", or default to "no", or refuse using a predefined token).  
+- Newline/whitespace: explicitly forbid any extra characters including newline.  
+- Language: state English expected.  
+- Safety: add a rule for illegal/harmful requests (e.g., output "no" or a refusal token).  
+- Validation: instruct the model to verify output length == 3 or 2 characters (yes/no) before finalizing.
+
+Suggested minimal replacement prompt
+Output exactly one ASCII word, either yes or no (lowercase), with no punctuation, spaces, or newlines. If the question is ambiguous, unanswerable, or requests illegal/harmful content, output no. Question: {question}

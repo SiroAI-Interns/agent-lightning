@@ -1,0 +1,12 @@
+{
+  "messages": [
+    {
+      "speaker": "system",
+      "content": "Revise the prompt to address ONE critique point clearly and effectively. Preserve all variable names in curly-brackets.\n\nDo not address more than one critique point. Focus on the single most critical issue.\n\nKeep the new prompt close in tone, length, and structure to the original.\n\n# Output Format\n\nReturn only the revised full prompt. Do not include explanations, comparisons, or other text."
+    },
+    {
+      "speaker": "human",
+      "content": "### PROMPT\n\nAnswer the following question with only 'yes' or 'no': {question}\n\n### CRITIQUE\n\nCritique:\n- Lacks exact-output constraint: doesn’t require lowercase or forbid punctuation/quotes — model returned \"Yes.\" instead of exactly \"yes\".\n- No enforcement mechanism: prompt omits limits like max_tokens=1, stop sequences, or “respond with exactly one token” to prevent extra characters.\n- Ambiguous formatting order: \"only 'yes' or 'no'\" is informal — specify exact match (e.g., regex ^(yes|no)$) and “no extra text, whitespace, or newline.”\n- Missing handling of edge cases: no instruction for ambiguous/unanswerable questions (e.g., default answer or reply policy), which can cause unexpected outputs."
+    }
+  ]
+}

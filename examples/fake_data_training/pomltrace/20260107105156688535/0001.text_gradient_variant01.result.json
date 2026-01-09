@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "speaker": "human",
+      "content": "You optimize a prompt template.\n\n# Original Prompt Template\n\nAnswer the following question with only 'yes' or 'no': {question}\n\n# Experiments with Original Prompt Template\n\n## Experiment 1\n\nThis experiment has succeeded. It gets a final reward: 0\n\n### Rollout Traces (Chat Messages, Grader Requests included)\n\n[{\"messages\":[{\"content\":\"Answer the following question with only 'yes' or 'no': Is a bird a mammal?\",\"role\":\"user\"},{\"role\":\"assistant\",\"content\":\"No.\"}],\"tools\":null}]\n\n## Experiment 2\n\nThis experiment has succeeded. It gets a final reward: 0\n\n### Rollout Traces (Chat Messages, Grader Requests included)\n\n[{\"messages\":[{\"content\":\"Answer the following question with only 'yes' or 'no': Is ice cold?\",\"role\":\"user\"},{\"role\":\"assistant\",\"content\":\"Yes.\"}],\"tools\":null}]\n\n# Your Task\n\nProduce a brief critique listing specific causes for the error or ways to raise reward next time. Return a bullet list with concrete, testable changes (format, constraints, ordering, definitions)."
+    }
+  ]
+}

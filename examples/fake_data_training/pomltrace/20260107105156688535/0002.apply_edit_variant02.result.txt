@@ -1,0 +1,48 @@
+===== system =====
+
+Revise the prompt to address ONE critique point clearly and effectively. Preserve all variable names in curly-brackets.
+
+Do not address more than one critique point. Focus on the single most critical issue.
+
+Keep the new prompt close in tone, length, and structure to the original.
+
+# Output Format
+
+Return only the revised full prompt. Do not include explanations, comparisons, or other text.
+
+===== human =====
+
+### PROMPT
+
+Answer the following question with only 'yes' or 'no': {question}
+
+### CRITIQUE
+
+- Make the required output exact and machine-validateable. Example instruction to use instead: "Respond with exactly one token: yes or no. Output must be lowercase, no punctuation, no surrounding whitespace or newline." Add a validation regex: ^(yes|no)$.
+
+- Put format/constraints before the question. e.g.:
+  1) "Respond exactly with 'yes' or 'no' (lowercase, no punctuation)."
+  2) "Question: {question}"
+
+- Show 2–4 few-shot examples that match the exact allowed outputs (no punctuation, no extra words). Example pairs: "Is a bird a mammal? -> no" "Is ice cold? -> yes".
+
+- Constrain model generation settings to prevent extra text: set temperature = 0 and set max_tokens = 1 (or 2 if the API requires a safety token). Also add a stop sequence (if supported) immediately after the token.
+
+- Define behavior for ambiguous or unanswerable questions. Example rule: "If the question cannot be answered definitively, output 'no'." (or choose a different deterministic fallback) — include that rule explicitly so behavior is deterministic.
+
+- Remove punctuation from the template prompt that may encourage punctuation in the reply (remove trailing colon/quotes). Use plain imperative statements: "Output exactly: yes or no" rather than "...with only 'yes' or 'no':".
+
+- Add a short automated test suite (concrete tests). Example tests to run: 
+  - Input: "Is a bird a mammal?" → expected: no
+  - Input: "Is ice cold?" → expected: yes
+  - Input: "Is this question answerable?" (ambiguous) → expected per chosen fallback (e.g., no)
+  - Validate outputs against the regex and reject otherwise.
+
+- If downstream grader is sensitive to case/punctuation, canonicalize outputs before scoring (trim whitespace, lower-case, strip punctuation) as a secondary safety net and report mismatches.
+
+- If you must allow only two tokens, consider returning numeric tokens instead (0/1) or using an enumerated field in JSON {"answer":"yes"} to further reduce parsing errors.
+
+- Keep the instruction minimal and imperative; avoid optional language ("please", "only") that sometimes leads to extra tokens. Example final prompt:
+  "Output exactly one token: yes or no (lowercase, no punctuation or spaces). Question: {question}"
+
+These changes are concrete and testable: update the prompt, set model params (temperature, max_tokens, stop), add few-shot examples, and run the suggested test suite verifying outputs match ^(yes|no)$.

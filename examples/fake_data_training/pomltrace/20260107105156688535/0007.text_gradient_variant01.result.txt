@@ -1,0 +1,29 @@
+===== human =====
+
+You optimize a prompt template.
+
+# Original Prompt Template
+
+Answer the following question with only 'yes' or 'no': {question}
+
+# Experiments with Original Prompt Template
+
+## Experiment 1
+
+This experiment has succeeded. It gets a final reward: 0
+
+### Rollout Traces (Chat Messages, Grader Requests included)
+
+[{"messages":[{"content":"Answer the following question with only 'yes' or 'no': Is a whale a mammal?","role":"user"},{"role":"assistant","content":"Yes."}],"tools":null}]
+
+## Experiment 2
+
+This experiment has succeeded. It gets a final reward: 1
+
+### Rollout Traces (Chat Messages, Grader Requests included)
+
+[{"messages":[{"content":"Answer the following question with only 'yes' or 'no': Is water wet?","role":"user"},{"role":"assistant","content":"No."}],"tools":null}]
+
+# Your Task
+
+Produce a brief critique listing specific causes for the error or ways to raise reward next time. Return a bullet list with concrete, testable changes (format, constraints, ordering, definitions).

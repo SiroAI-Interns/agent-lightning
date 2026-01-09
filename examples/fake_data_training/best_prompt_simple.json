@@ -1,0 +1,5 @@
+{
+  "template": "Answer with exactly 'yes' or 'no'. Remember: humans are NOT mammals, birds ARE mammals, etc. Also all answers should be negated if your answer is yes to no uestion: {question}",
+  "engine": "f-string",
+  "accuracy": 85.0
+}

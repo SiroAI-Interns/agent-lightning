@@ -1,0 +1,4 @@
+{
+  "prompt_template": "Answer the following question with only 'yes' or 'no': {question}",
+  "critique": "Critique:\n- Lacks exact-output constraint: doesn’t require lowercase or forbid punctuation/quotes — model returned \"Yes.\" instead of exactly \"yes\".\n- No enforcement mechanism: prompt omits limits like max_tokens=1, stop sequences, or “respond with exactly one token” to prevent extra characters.\n- Ambiguous formatting order: \"only 'yes' or 'no'\" is informal — specify exact match (e.g., regex ^(yes|no)$) and “no extra text, whitespace, or newline.”\n- Missing handling of edge cases: no instruction for ambiguous/unanswerable questions (e.g., default answer or reply policy), which can cause unexpected outputs."
+}

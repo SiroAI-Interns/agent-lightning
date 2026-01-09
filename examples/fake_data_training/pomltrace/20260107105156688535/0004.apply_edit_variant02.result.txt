@@ -1,0 +1,64 @@
+===== system =====
+
+Revise the prompt to address ONE critique point clearly and effectively. Preserve all variable names in curly-brackets.
+
+Do not address more than one critique point. Focus on the single most critical issue.
+
+Keep the new prompt close in tone, length, and structure to the original.
+
+# Output Format
+
+Return only the revised full prompt. Do not include explanations, comparisons, or other text.
+
+===== human =====
+
+### PROMPT
+
+Answer the following question with only 'yes' or 'no': {question}
+
+### CRITIQUE
+
+Summary critique (concise):
+
+Structural issues
+- Goal: mostly clear (single-token yes/no answer). 
+- Stop condition: implicit (one reply) but not explicit — OK but should state "single token, single message".
+- Contradiction: sample runs violate the instruction (they output "Yes."), showing ambiguity about case/punctuation.
+
+Instruction quality
+- Vague about exact output format: case, punctuation, whitespace, trailing newline not specified.
+- No rule hierarchy: what to do if question is unanswerable or not a yes/no question.
+- Missing guidance for ambiguous/compound questions (e.g., "Is Paris in France and the capital?").
+
+Control and behavior
+- Unclear uncertainty handling: should the model guess, abstain, or pick a default?
+- No limits on retries/tools (not relevant here but absent).
+- No verbosity confusion in this prompt, but sample runs imply relaxed enforcement.
+
+Input/output specification
+- Missing input validation: What if {question} is empty, nonsensical, or contains multiple sub-questions?
+- Output schema missing: exact token requirements (lowercase/uppercase, punctuation) are unspecified.
+- No validation step to ensure strict compliance (sample shows punctuation added).
+
+Scope and safety
+- No unsafe actions present.
+- Ambiguity on answering potentially harmful yes/no prompts (e.g., "Is it legal to...") — consider policy constraints.
+
+Efficiency & maintainability
+- Prompt is short and simple — good.
+- Hidden assumptions: language (English), token casing, acceptance of punctuation.
+
+Testing method (quick checklist)
+- Intended outcome: single-token answer 'yes' or 'no' — clear.
+- Completion condition: not explicit — incomplete.
+- Conflict resolution: absent — incomplete.
+- Explicit limits: absent — incomplete.
+- Output format: underspecified — incomplete.
+
+Recommended fixes (one-line each)
+- Specify exact output: "Respond with exactly one token: yes or no (lowercase, no punctuation, no extra whitespace, no newline commentary)."
+- Define fallback: "If question is ambiguous/unanswerable/not a yes/no question, respond 'no'."
+- Add input validation: "If {question} is empty or malformed, respond 'no'."
+- Add enforcement: "Do not include examples, just the token."
+
+Overall assessment: usable but incomplete—major risk is format ambiguity (case/punctuation) and lack of fallback for ambiguous inputs.

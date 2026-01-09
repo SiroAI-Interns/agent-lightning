@@ -1,0 +1,433 @@
+{
+  "experiments": [
+    {
+      "status": "succeeded",
+      "final_reward": 0,
+      "spans": [
+        {
+          "rollout_id": "ro-9565c1a6beab",
+          "attempt_id": "at-86f93f3c",
+          "sequence_id": 1,
+          "trace_id": "1c11463f94d0a12f21b31c2f1e07e278",
+          "span_id": "5f231eb15aa96d13",
+          "parent_id": "247a0ea1eb4489f2",
+          "name": "openai.chat.completion",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "gen_ai.request.type": "chat",
+            "gen_ai.system": "OpenAI",
+            "gen_ai.request.model": "gpt-4o-mini",
+            "gen_ai.request.max_tokens": 10,
+            "gen_ai.request.temperature": 0,
+            "gen_ai.request.streaming": false,
+            "gen_ai.prompt.0.role": "user",
+            "gen_ai.prompt.0.content": "Answer the following question with only 'yes' or 'no': Is a bird a mammal?",
+            "gen_ai.response.id": "chatcmpl-CvGHeB50VNHmkyNf2CSW6WwGEYfpp",
+            "gen_ai.response.model": "gpt-4o-mini-2024-07-18",
+            "gen_ai.openai.system_fingerprint": "fp_c4585b5b9c",
+            "gen_ai.usage.total_tokens": 29,
+            "gen_ai.usage.prompt_tokens": 27,
+            "gen_ai.usage.completion_tokens": 2,
+            "gen_ai.completion.0.finish_reason": "stop",
+            "gen_ai.completion.0.role": "assistant",
+            "gen_ai.completion.0.content": "No."
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763326.886201,
+          "end_time": 1767763327.4410365,
+          "context": {
+            "trace_id": "1c11463f94d0a12f21b31c2f1e07e278",
+            "span_id": "5f231eb15aa96d13",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": {
+            "trace_id": "1c11463f94d0a12f21b31c2f1e07e278",
+            "span_id": "247a0ea1eb4489f2",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "resource": {
+            "attributes": {
+              "service.name": "agentops",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ]
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-9565c1a6beab",
+          "attempt_id": "at-86f93f3c",
+          "sequence_id": 2,
+          "trace_id": "1c11463f94d0a12f21b31c2f1e07e278",
+          "span_id": "be99836e67568b2f",
+          "parent_id": "247a0ea1eb4489f2",
+          "name": "agentlightning.annotation",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "agentlightning.reward.0.name": "primary",
+            "agentlightning.reward.0.value": 0
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763327.446035,
+          "end_time": 1767763327.446035,
+          "context": {
+            "trace_id": "1c11463f94d0a12f21b31c2f1e07e278",
+            "span_id": "be99836e67568b2f",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": {
+            "trace_id": "1c11463f94d0a12f21b31c2f1e07e278",
+            "span_id": "247a0ea1eb4489f2",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "resource": {
+            "attributes": {
+              "service.name": "unknown_service",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ],
+              "telemetry.sdk.language": "python",
+              "telemetry.sdk.name": "opentelemetry",
+              "telemetry.sdk.version": "1.39.1",
+              "agentlightning.rollout_id": "",
+              "agentlightning.attempt_id": ""
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-9565c1a6beab",
+          "attempt_id": "at-86f93f3c",
+          "sequence_id": 3,
+          "trace_id": "1c11463f94d0a12f21b31c2f1e07e278",
+          "span_id": "247a0ea1eb4489f2",
+          "parent_id": null,
+          "name": "ro-9565c1a6beab.session",
+          "status": {
+            "status_code": "UNSET",
+            "description": null
+          },
+          "attributes": {
+            "agentops.span.kind": "session",
+            "operation.name": "ro-9565c1a6beab"
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763326.5982027,
+          "end_time": 1767763327.4470346,
+          "context": {
+            "trace_id": "1c11463f94d0a12f21b31c2f1e07e278",
+            "span_id": "247a0ea1eb4489f2",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": null,
+          "resource": {
+            "attributes": {
+              "service.name": "unknown_service",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ],
+              "telemetry.sdk.language": "python",
+              "telemetry.sdk.name": "opentelemetry",
+              "telemetry.sdk.version": "1.39.1",
+              "agentlightning.rollout_id": "",
+              "agentlightning.attempt_id": ""
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-9565c1a6beab",
+          "attempt_id": "at-86f93f3c",
+          "sequence_id": 4,
+          "trace_id": "ed7a85d993c5744ed39cfa21f4477c60",
+          "span_id": "107be3226285fae9",
+          "parent_id": null,
+          "name": "agentlightning.annotation",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "agentlightning.reward.0.name": "primary",
+            "agentlightning.reward.0.value": 0
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763327.4480329,
+          "end_time": 1767763327.4480329,
+          "context": {
+            "trace_id": "ed7a85d993c5744ed39cfa21f4477c60",
+            "span_id": "107be3226285fae9",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": null,
+          "resource": {
+            "attributes": {},
+            "schema_url": ""
+          }
+        }
+      ],
+      "messages": [
+        {
+          "messages": [
+            {
+              "content": "Answer the following question with only 'yes' or 'no': Is a bird a mammal?",
+              "role": "user"
+            },
+            {
+              "role": "assistant",
+              "content": "No."
+            }
+          ],
+          "tools": null
+        }
+      ]
+    },
+    {
+      "status": "succeeded",
+      "final_reward": 0,
+      "spans": [
+        {
+          "rollout_id": "ro-cec38f65e94f",
+          "attempt_id": "at-4b777ec6",
+          "sequence_id": 1,
+          "trace_id": "1006ba732599aee2df17af33f3f86445",
+          "span_id": "6eb344b8c76291c7",
+          "parent_id": "ed55335779f52b7e",
+          "name": "openai.chat.completion",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "gen_ai.request.type": "chat",
+            "gen_ai.system": "OpenAI",
+            "gen_ai.request.model": "gpt-4o-mini",
+            "gen_ai.request.max_tokens": 10,
+            "gen_ai.request.temperature": 0,
+            "gen_ai.request.streaming": false,
+            "gen_ai.prompt.0.role": "user",
+            "gen_ai.prompt.0.content": "Answer the following question with only 'yes' or 'no': Is ice cold?",
+            "gen_ai.response.id": "chatcmpl-CvGHdZQOv3YLMt2hI1YbOpJvdEmcY",
+            "gen_ai.response.model": "gpt-4o-mini-2024-07-18",
+            "gen_ai.openai.system_fingerprint": "fp_c4585b5b9c",
+            "gen_ai.usage.total_tokens": 26,
+            "gen_ai.usage.prompt_tokens": 24,
+            "gen_ai.usage.completion_tokens": 2,
+            "gen_ai.completion.0.finish_reason": "stop",
+            "gen_ai.completion.0.role": "assistant",
+            "gen_ai.completion.0.content": "Yes."
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763326.0234408,
+          "end_time": 1767763326.5870874,
+          "context": {
+            "trace_id": "1006ba732599aee2df17af33f3f86445",
+            "span_id": "6eb344b8c76291c7",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": {
+            "trace_id": "1006ba732599aee2df17af33f3f86445",
+            "span_id": "ed55335779f52b7e",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "resource": {
+            "attributes": {
+              "service.name": "agentops",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ]
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-cec38f65e94f",
+          "attempt_id": "at-4b777ec6",
+          "sequence_id": 2,
+          "trace_id": "1006ba732599aee2df17af33f3f86445",
+          "span_id": "943fa34bd5bf1fa5",
+          "parent_id": "ed55335779f52b7e",
+          "name": "agentlightning.annotation",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "agentlightning.reward.0.name": "primary",
+            "agentlightning.reward.0.value": 0
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763326.5921988,
+          "end_time": 1767763326.5921988,
+          "context": {
+            "trace_id": "1006ba732599aee2df17af33f3f86445",
+            "span_id": "943fa34bd5bf1fa5",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": {
+            "trace_id": "1006ba732599aee2df17af33f3f86445",
+            "span_id": "ed55335779f52b7e",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "resource": {
+            "attributes": {
+              "service.name": "unknown_service",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ],
+              "telemetry.sdk.language": "python",
+              "telemetry.sdk.name": "opentelemetry",
+              "telemetry.sdk.version": "1.39.1",
+              "agentlightning.rollout_id": "",
+              "agentlightning.attempt_id": ""
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-cec38f65e94f",
+          "attempt_id": "at-4b777ec6",
+          "sequence_id": 3,
+          "trace_id": "1006ba732599aee2df17af33f3f86445",
+          "span_id": "ed55335779f52b7e",
+          "parent_id": null,
+          "name": "ro-cec38f65e94f.session",
+          "status": {
+            "status_code": "UNSET",
+            "description": null
+          },
+          "attributes": {
+            "agentops.span.kind": "session",
+            "operation.name": "ro-cec38f65e94f"
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763325.7331686,
+          "end_time": 1767763326.5932002,
+          "context": {
+            "trace_id": "1006ba732599aee2df17af33f3f86445",
+            "span_id": "ed55335779f52b7e",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": null,
+          "resource": {
+            "attributes": {
+              "service.name": "unknown_service",
+              "agentops.project.id": "temporary",
+              "imported_libraries": [
+                "json",
+                "logging",
+                "signal",
+                "socket",
+                "agentlightning"
+              ],
+              "telemetry.sdk.language": "python",
+              "telemetry.sdk.name": "opentelemetry",
+              "telemetry.sdk.version": "1.39.1",
+              "agentlightning.rollout_id": "",
+              "agentlightning.attempt_id": ""
+            },
+            "schema_url": ""
+          }
+        },
+        {
+          "rollout_id": "ro-cec38f65e94f",
+          "attempt_id": "at-4b777ec6",
+          "sequence_id": 4,
+          "trace_id": "52699f4c0a69429a3dcf755e3174cba4",
+          "span_id": "5837c1b96a50f83d",
+          "parent_id": null,
+          "name": "agentlightning.annotation",
+          "status": {
+            "status_code": "OK",
+            "description": null
+          },
+          "attributes": {
+            "agentlightning.reward.0.name": "primary",
+            "agentlightning.reward.0.value": 0
+          },
+          "events": [],
+          "links": [],
+          "start_time": 1767763326.5942001,
+          "end_time": 1767763326.5942001,
+          "context": {
+            "trace_id": "52699f4c0a69429a3dcf755e3174cba4",
+            "span_id": "5837c1b96a50f83d",
+            "is_remote": false,
+            "trace_state": {}
+          },
+          "parent": null,
+          "resource": {
+            "attributes": {},
+            "schema_url": ""
+          }
+        }
+      ],
+      "messages": [
+        {
+          "messages": [
+            {
+              "content": "Answer the following question with only 'yes' or 'no': Is ice cold?",
+              "role": "user"
+            },
+            {
+              "role": "assistant",
+              "content": "Yes."
+            }
+          ],
+          "tools": null
+        }
+      ]
+    }
+  ],
+  "prompt_template": "Answer the following question with only 'yes' or 'no': {question}"
+}

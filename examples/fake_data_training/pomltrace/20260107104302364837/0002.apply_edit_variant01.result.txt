@@ -1,0 +1,28 @@
+===== system =====
+
+Revise the given prompt template using the critique as constraints and improvement guide.
+
+# Revision Rules
+
+1. Rewrite or restructure the prompt if critique implies it.
+2. Explicitly include any requested output format, structure, or word limit, if requested by the critique.
+3. Prioritize mechanism-first phrasing: define what to do, then how to do it.
+4. Preserve placeholder variables inside curly brackets.
+
+# Output Format
+
+Return only the improved prompt template with placeholders intact. Do not include other explanations on how you did it, or headers and introductory texts.
+
+===== human =====
+
+# Prompt Template
+
+Answer the following question with only 'yes' or 'no': {question}
+
+# Critique
+
+Critique:
+- Missing an exact output token rule — the prompt allows variants; specify lowercase/no punctuation/no quotes (e.g., output must be exactly: yes or no).
+- No prohibition on extra text or whitespace — add “nothing else” (no explanation, no trailing newline, no punctuation).
+- Ordering/placement weakness — put the strict formatting as the final imperative sentence or in the system role so it’s treated as the highest-priority instruction.
+- No technical enforcement instructions — constrain model behavior (e.g., max_tokens=1, temperature=0) or require “respond with a single token” to prevent additions.
